@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>练习查询 | Hexo</title>
+  <title>基础练习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="练习代码SELECT * FROM stu;SELECT name,age FROM stu;SELECT name FROM stu WHERE name=’孙九’;SELECT name,addres FROM stu LIMIT 0,5;SELECT * FROM stu_score;SELECT subject,score FROM stu_score;SELECT score FROM">
+  <meta name="description" content="创建表create table PRODUCT(  id int not null,– 主键 pcode VARCHAR(20) not null,– 商品编号 pname VARCHAR(20),– 商品名称 inprice int,– 进价 outprice int,– 售价 toma varchar(20),– 管理员名称 lastcou int,– 剩余库存数量 ptype VARCHAR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="练习查询">
-<meta property="og:url" content="http://yoursite.com/2019/10/17/练习查询/index.html">
+<meta property="og:title" content="基础练习">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/基础练习/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="练习代码SELECT * FROM stu;SELECT name,age FROM stu;SELECT name FROM stu WHERE name=’孙九’;SELECT name,addres FROM stu LIMIT 0,5;SELECT * FROM stu_score;SELECT subject,score FROM stu_score;SELECT score FROM">
+<meta property="og:description" content="创建表create table PRODUCT(  id int not null,– 主键 pcode VARCHAR(20) not null,– 商品编号 pname VARCHAR(20),– 商品名称 inprice int,– 进价 outprice int,– 售价 toma varchar(20),– 管理员名称 lastcou int,– 剩余库存数量 ptype VARCHAR">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-17T13:08:04.602Z">
+<meta property="og:updated_time" content="2019-10-21T13:39:17.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="练习查询">
-<meta name="twitter:description" content="练习代码SELECT * FROM stu;SELECT name,age FROM stu;SELECT name FROM stu WHERE name=’孙九’;SELECT name,addres FROM stu LIMIT 0,5;SELECT * FROM stu_score;SELECT subject,score FROM stu_score;SELECT score FROM">
+<meta name="twitter:title" content="基础练习">
+<meta name="twitter:description" content="创建表create table PRODUCT(  id int not null,– 主键 pcode VARCHAR(20) not null,– 商品编号 pname VARCHAR(20),– 商品名称 inprice int,– 进价 outprice int,– 售价 toma varchar(20),– 管理员名称 lastcou int,– 剩余库存数量 ptype VARCHAR">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,27 +154,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-练习查询" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-基础练习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      练习查询
+      基础练习
     </h1>
   
 
         
-        <a href="/2019/10/17/练习查询/" class="archive-article-date">
-  	<time datetime="2019-10-17T13:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
+        <a href="/2019/10/21/基础练习/" class="archive-article-date">
+  	<time datetime="2019-10-21T13:36:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>练习代码<br>SELECT * FROM stu;<br>SELECT name,age FROM stu;<br>SELECT name FROM stu WHERE name=’孙九’;<br>SELECT name,addres FROM stu LIMIT 0,5;<br>SELECT * FROM stu_score;<br>SELECT subject,score FROM stu_score;<br>SELECT score FROM stu_score WHERE id&gt;3;<br>SELECT * FROM stu WHERE age&gt;23;<br>SELECT name,addres,age,id FROM stu WHERE id&gt;5;<br>SELECT * FROM stu WHERE addres!=’上海’;<br>SELECT * FROM stu WHERE age=22 OR age=24;<br>SELECT * FROM stu WHERE addres!=’上海’ AND addres!=’深圳’;<br>SELECT * FROM stu WHERE addres!=’上海’ AND addres!=’深圳’ AND addres!=’北京’;<br>SELECT * FROM stu WHERE age BETWEEN 22 AND 26;<br>SELECT * FROM stu WHERE birthday BETWEEN ‘1993-01-01’ AND ‘1993-12-31’;<br>SELECT * FROM stu WHERE birthday IS NULL;<br>SELECT * FROM stu WHERE birthday IS NOT NULL;<br>SELECT * FROM stu_score WHERE score BETWEEN 60 AND 80;<br>SELECT * FROM stu WHERE age&lt;22 OR addres=’北京’;<br>SELECT * FROM stu ORDER BY age DESC;<br>SELECT * FROM stu_score ORDER BY id ASC,score DESC;<br>SELECT * FROM stu LIMIT 3,4;<br>SELECT * FROM stu LIMIT 3,14;<br>SELECT * FROM stu LIMIT 4,9;</p>
+        <p>创建表<br>create table PRODUCT<br>(<br>  id int not null,– 主键<br> pcode VARCHAR(20) not null,– 商品编号<br> pname VARCHAR(20),– 商品名称<br> inprice int,– 进价<br> outprice int,– 售价<br> toma varchar(20),– 管理员名称<br> lastcou int,– 剩余库存数量<br> ptype VARCHAR(5),– 商品类型<br> mark int,– 有效标志<br> createtime DATE– 生产日期<br>);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (1, ‘f-qq45’, ‘香蕉’, 28, 40, ‘张三’, 12, ‘a’, 1, ‘2017-05-16’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (2, ‘f-56tt’, ‘苹果’, 34, 50, ‘张三’, 33, ‘a’, 1, ‘2016-06-16’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (3, ‘f-332’, ‘梨’, 27, 40, ‘张三’, 76, ‘a’, 1, ‘2016-09-23’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (4, ‘f-20’, ‘猪肉’, 140, 160, ‘张三’, 56, ‘b’, 1,’2013-12-31’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (5, ‘f-qq46’, ‘圆珠笔’, 30, 50, ‘王五’, 55, ‘e’, 1,’2016-09-14’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (6, ‘f-57tt’, ‘樱桃’, 80, null, ‘王五’, 12, ‘a’, 1,’2006-05-22’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (7, ‘f-292’, ‘三文鱼’, 50, 80, ‘王五’, 23, ‘b’, 1,’2001-07-31’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (8, ‘f-604’, ‘螺丝刀’, 120, 150, ‘王五’, 72, ‘c’, 1,’2013-02-24’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (9, ‘f-qq47’, ‘扳手’, 140, 190, ‘王五’, 90, ‘c’, 1,’2015-05-14’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (10, ‘f-58tt’, ‘钳子’, 100, 130, ‘张三’, 97, ‘c’, 1,’2012-03-28’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (11, ‘f-916’, ‘矿泉水’, 25, 30, ‘李四’, 44, ‘d’, 1,’2012-07-21’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (12, ‘f-1228’, ‘杏仁露’, 40, 50, ‘李四’, 38, ‘d’, 1,’2013-02-22’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (13, ‘f-59tt’, ‘钢笔’, null, 430, ‘李四’, 22, ‘e’, 1,’2013-09-30’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (14, ‘f-1540’, ‘铅笔’, .50, 80, ‘赵六’, 72, ‘e’, 1,’2018-05-14’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (15, ‘f-1852’, ‘大马哈鱼’, 15, 20, ‘赵六’, 76, ‘b’, 1,’2012-05-17’);<br>insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>values (16, ‘f-2164’, ‘鸡蛋’, 27, 40, ‘赵六’, 56, ‘b’, 1,’2010-09-14’);</p>
+<p>操作<br>– 1使用insert into任意添加三条数据(数据信息自定)加到这个表中<br>– insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>– values (17, ‘f-1001’, ‘西瓜’, 50, 80, ‘钱七’, 25, ‘a’, 1,’2018-09-14’);<br>– insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>– values (18, ‘f-1002’, ‘葡萄’, 70, 100, ‘钱七’, 80, ‘a’, 1,’2018-09-14’);<br>– insert into PRODUCT (id, pcode, pname, inprice, outprice, toma, lastcou, ptype, mark, createtime)<br>– values (19, ‘f-1003’, ‘橘子’, 60, 90, ‘钱七’, 50, ‘a’, 1,’2018-09-14’);<br>– 2删除’猪肉’的那条记录<br>DELETE FROM product WHERE pname=’猪肉’;<br>– 3将扳手和钳子的商品名称分别改为’16号扳手’和’小号钳子’,并将这两个商品的管理人员都改为’赵六’<br>UPDATE product SET pname=’16号扳手’toma=’赵六’ WHERE pname=’扳手’;<br>UPDATE product SET pname=’小号钳子’toma=’赵六’ WHERE pname=’钳子’;<br>– 4查询商品类型为’a’的所有商品<br>SELECT * FROM product WHERE ptype=’a’;<br>– 5查询王五负责的c类商品<br>SELECT * FROM product WHERE toma=’王五’ AND ptype=’c’;<br>– 6查询剩余数量小于50的所有商品<br>SELECT * FROM product WHERE lastcou&lt;50;<br>– 7查询剩余数量在60-80之间的<br>SELECT * FROM product WHERE lastcou BETWEEN 60 AND 80;<br>– 8查询商品名称带’笔’的和带’鱼’的记录<br>SELECT * FROM product WHERE pname LIKE ‘%鱼’ OR pname LIKE ‘%笔’;<br>– 9查询商品编号中带’qq’的记录<br>SELECT * FROM product WHERE pcode LIKE ‘%qq%’;<br>– 10查询商品类型为a, d, c的所有商品<br>SELECT * FROM product WHERE ptype IN(‘a’,’b’,’c’);<br>– 11查询所有’e’类型商品,并按照剩余库存数量排序<br>SELECT * FROM product WHERE ptype=’e’ ORDER BY lastcou ASC;<br>– 12查询管理商品数少于4的管理员名称和管理的商品数量<br>SELECT COUNT(1),toma FROM product GROUP BY toma HAVING COUNT(1)&lt;4;<br>– 13查询所有的管理员名称和其手上所管理的所有商品数量<br>SELECT SUM(lastcou),toma FROM product GROUP BY toma;<br>– 14查询所有的管理员名称和其手上所管理的所有’a’类商品名称的数量<br>SELECT *,COUNT(1),toma FROM product GROUP BY ptype=’a’;<br>– 15查询所有商品中剩余数量最少的一个<br>SELECT MIN(lastcou) FROM product WHERE lastcou;<br>– 16查询生产日期在2015/5/31之前的数据<br>SELECT * FROM product WHERE createtime&lt;’2015-05-31’;<br>– 17假设所有商品的有效期是一年,以当前系统时间为标准,查询所有商品的信息,并且加一列标注是否过期</p>
+<p>– 18查询每个管理员所管理的商品的平均进价价格和售价价格<br>SELECT AVG(inprice),AVG(outprice),toma FROM product GROUP BY toma;<br>– 19查询每个管理员手上的商品的利润的平均值<br>SELECT AVG(outprice-inprice),toma FROM product GROUP BY toma;<br>– 20查询假设每个管理员把所有商品售完后各自的利润总和<br>SELECT SUM((outprice-inprice)*lastcou),toma FROM product GROUP BY toma;</p>
 
       
 
@@ -254,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/17/练习查询/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/基础练习/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +270,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/21/基础练习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          基础练习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/16/查询/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">查询</div>
+    <a href="/2019/10/17/练习查询/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">练习查询</div>
       <i class="icon-circle-right"></i>
     </a>
   
