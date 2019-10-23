@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>子查询 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="先创建一个表  – Table structure for score  DROP TABLE IF EXISTS score;CREATE TABLE score (  id int(11) NOT NULL AUTO_INCREMENT,  NAME varchar(20) DEFAULT NULL,  SUBJECT varchar(20) DEFAULT NULL,  score int(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="子查询">
+<meta property="og:url" content="http://yoursite.com/2019/10/23/子查询/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="先创建一个表  – Table structure for score  DROP TABLE IF EXISTS score;CREATE TABLE score (  id int(11) NOT NULL AUTO_INCREMENT,  NAME varchar(20) DEFAULT NULL,  SUBJECT varchar(20) DEFAULT NULL,  score int(">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-23T12:12:44.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="子查询">
+<meta name="twitter:description" content="先创建一个表  – Table structure for score  DROP TABLE IF EXISTS score;CREATE TABLE score (  id int(11) NOT NULL AUTO_INCREMENT,  NAME varchar(20) DEFAULT NULL,  SUBJECT varchar(20) DEFAULT NULL,  score int(">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,211 +154,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-子查询" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      子查询
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/23/子查询/" class="archive-article-date">
+
+        
+        <a href="/2019/10/23/子查询/" class="archive-article-date">
   	<time datetime="2019-10-23T12:11:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/23/子查询/">子查询</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先创建一个表</p>
+<hr>
+<p>– Table structure for score</p>
+<hr>
+<p>DROP TABLE IF EXISTS <code>score</code>;<br>CREATE TABLE <code>score</code> (<br>  <code>id</code> int(11) NOT NULL AUTO_INCREMENT,<br>  <code>NAME</code> varchar(20) DEFAULT NULL,<br>  <code>SUBJECT</code> varchar(20) DEFAULT NULL,<br>  <code>score</code> int(11) DEFAULT NULL,<br>  PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;</p>
+<hr>
+<p>– Records of score</p>
+<hr>
+<p>BEGIN;<br>INSERT INTO <code>score</code> VALUES (1, ‘张三’, ‘语文’, 81);<br>INSERT INTO <code>score</code> VALUES (2, ‘张三’, ‘数学’, 75);<br>INSERT INTO <code>score</code> VALUES (3, ‘李四’, ‘语文’, 76);<br>INSERT INTO <code>score</code> VALUES (4, ‘李四’, ‘数学’, 90);<br>INSERT INTO <code>score</code> VALUES (5, ‘王五’, ‘语文’, 81);<br>INSERT INTO <code>score</code> VALUES (6, ‘王五’, ‘数学’, 100);<br>INSERT INTO <code>score</code> VALUES (7, ‘王五 ‘, ‘英语’, 90);<br>COMMIT;</p>
+<p>SET FOREIGN_KEY_CHECKS = 1;</p>
+<p>– 用一条 SQL 语句查询出每门课都大于 80 分的学生姓名<br>– 难点：每门课的分数 – 解决方案：把分数少于80分的进行排除</p>
+<p>– not in 字段<br>SELECT *<br>FROM score<br>WHERE NAME NOT IN (SELECT  NAME FROM score WHERE score&lt;=80)</p>
+<p>– not exists 字段<br>SELECT *<br>FROM score a<br>WHERE NOT EXISTS (SELECT * FROM score b WHERE a.name = b.name AND b.score &lt; 80) ;</p>
+<p>– all()方法<br>SELECT *<br>FROM score a<br>WHERE 80 &lt; ALL(SELECT score FROM score WHERE a.name = NAME );</p>
+<p>– any()方法<br>SELECT *<br>FROM score a<br>WHERE 80 &lt; any(SELECT score FROM score WHERE a.name = NAME );</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/23/子查询/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/联合查询/" class="archive-article-date">
-  	<time datetime="2019-10-22T13:26:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/22/联合查询/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">联合查询</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/联合查询/">联合查询</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/基础练习/" class="archive-article-date">
-  	<time datetime="2019-10-21T13:36:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/基础练习/">基础练习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/练习查询/" class="archive-article-date">
-  	<time datetime="2019-10-17T13:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/练习查询/">练习查询</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/16/查询/" class="archive-article-date">
-  	<time datetime="2019-10-16T12:07:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/16/查询/">查询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/数据库/" class="archive-article-date">
-  	<time datetime="2019-10-15T06:41:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/15/数据库/">数据库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-15T06:09:05.290Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -377,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
